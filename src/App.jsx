@@ -1,26 +1,18 @@
-import About from "./components/About";
-import AdditionalWorks from "./components/AdditionalWorks";
-import Contacts from "./components/Contacts";
-import Footer from "./components/Footer";
-import Hero from "./components/Hero";
-import Navbar from "./components/Navbar";
-import Params from "./components/Params";
-import Services from "./components/Services";
-import Works from "./components/Works";
+import { BrowserRouter, Route, Routes } from "react-router-dom";
+import Home from "./Home";
+import Portfolio1 from "./Portfolios/Portfolio1/Portfolio1";
 
 function App() {
   return (
-    <div className="bg-black text-white font-['Poppins',_sans-serif]">
-      <Navbar />
-      <Hero />
-      <Services />
-      <About />
-      <Works />
-      <Params />
-      <AdditionalWorks />
-      <Contacts />
-      <Footer />
-    </div>
+    <BrowserRouter>
+      <Routes>
+        {/* Home Page of app */}
+        <Route path="/" element={<Home />} />
+
+        {/* PORTFOLIOS */}
+        <Route path="/portfolio1" element={<Portfolio1 />} />
+      </Routes>
+    </BrowserRouter>
   );
 }
 
